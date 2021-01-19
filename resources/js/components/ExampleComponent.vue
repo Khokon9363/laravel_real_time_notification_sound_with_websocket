@@ -1,11 +1,13 @@
 <template>
-    <div class="container">
+    <div class="container" @mousemove="audio('/audio/2.mp3')">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Example Component</div>
                     <div class="card-body">
                         This is a software to make an notification on a web Application using Laravel WebSocket by Hridoy (Me)
+
+                        Please move your mouse on this area (container)
                     </div>
                 </div>
             </div>
@@ -18,13 +20,13 @@
         mounted() {
             Echo.join('test')
                 .here((users) => {
-                    this.audio('/audio/SleepAway.mp3')
+                    this.audio('/audio/sleep away.mp3')
                 })
                 .joining((user) => {
-                    console.log(user.name+' is joining');
+                    this.audio('/audio/2.mp3')
                 })
                 .leaving((user) => {
-                    console.log(user.name+' is leaving');
+                    this.audio('/audio/2.mp3')
                 });
         },
         methods:{

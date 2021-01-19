@@ -1923,16 +1923,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     var _this = this;
 
     Echo.join('test').here(function (users) {
-      _this.audio('/audio/SleepAway.mp3');
+      _this.audio('/audio/sleep away.mp3');
     }).joining(function (user) {
-      console.log(user.name + ' is joining');
+      _this.audio('/audio/2.mp3');
     }).leaving(function (user) {
-      console.log(user.name + ' is leaving');
+      _this.audio('/audio/2.mp3');
     });
   },
   methods: {
@@ -43654,26 +43656,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    {
+      staticClass: "container",
+      on: {
+        mousemove: function($event) {
+          return _vm.audio("/audio/2.mp3")
+        }
+      }
+    },
+    [_vm._m(0)]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    This is a software to make an notification on a web Application using Laravel WebSocket by Hridoy (Me)\n                "
-              )
-            ])
+    return _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v("Example Component")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _vm._v(
+              "\n                    This is a software to make an notification on a web Application using Laravel WebSocket by Hridoy (Me)\n\n                    Please move your mouse on this area (container)\n                "
+            )
           ])
         ])
       ])
